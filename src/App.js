@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  // Setting up first state, our todos will start with an empty array
+  const [todos, setTodos] = useState(['Take dogs for walk', 'Take trash out', 'wash dishes']); 
+
   return (
     <div className="App">
-      <h1> Hello Nico! Congrats on React!</h1>
+      <h1> Hello Nico! Here is your ToDo List:</h1>
       <input/>
       <button>Add ToDo</button>
 
       <ul>
-        <li>Take dogs for walk</li>
-        <li>Take trash out</li>
+        {todos.map(todo => (
+          <li>{todo}</li>
+        ))}
       </ul>
     </div>
   );
